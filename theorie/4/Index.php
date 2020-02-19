@@ -1,15 +1,21 @@
 <?php
 session_start();
-$_SESSION["NumberOfVisitors"] = 0;
+if (!isset($_SESSION["NumberOfVisitors"])) {
+    $_SESSION["NumberOfVisitors"] = 0;
+} else
+    $_SESSION["NumberOfVisitors"] = $_SESSION["NumberOfVisitors"] + "1";
 
 $data = [
-    "lang" => "Choose your language"
+    "lang" => "Choose your language",
+    "visitor" => "Number of visitors"
 ];
 
 if ($_SESSION["LANGUAGE"] == "be") {
     $data["lang"] = "Kies je taal";
+    $data["visitor"] = "Aantal bezoekers";
 } else if ($_SESSION["LANGUAGE"] == "en") {
     $data["lang"] = "Choose your language";
+    $data["visitor"] = "Number of visitors";
 }
 ?>
 
@@ -51,6 +57,12 @@ if ($_SESSION["LANGUAGE"] == "be") {
                     </div>
                 </form>
             </div>
+        </div>
+        <div class="text-center">
+            <?php
+            echo $data["visitor"] . " : ";
+            echo $_SESSION["NumberOfVisitors"];
+            ?>
         </div>
     </div>
 </body>
