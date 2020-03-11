@@ -32,11 +32,11 @@
                 </div>
             </form>
         </div>
-
         <?php
-        isset($_POST["afkorting"]) ?  $afkorting = $_POST["afkorting"] : $afkorting = "";
-        isset($_POST["omschrijving"]) ?  $omschrijving = $_POST["omschrijving"] : $omschrijving = "";
-        isset($_POST["link"]) ?  $link = $_POST["link"] : $link = "";
+
+        $afkorting = $_POST["afkorting"] ?? '';
+        $omschrijving = $_POST["omschrijving"] ?? '';
+        $link = $_POST["link"] ?? '';
 
         $sql = mysqli_connect("localhost", "root", "root", "website")
             or die("error:" . mysqli_connect_error($sql));

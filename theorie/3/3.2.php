@@ -17,14 +17,14 @@
         <h1 style="margin: 50px 0px 30px 0px;">Informatie:</h1>
         <?php
 
-        isset($_POST["sensorID"]) ?  $id = $_POST["sensorID"] : $id = "";
-        isset($_POST["co2Value"]) ?  $co2 = $_POST["co2Value"] : $co2 = "";
-        isset($_POST["humidityValue"]) ?  $hum = $_POST["humidityValue"] : $hum = "";
-
+        $id = $_POST["sensorID"] ?? '';
+        $co2 = $_POST["co2Value"] ?? '';
+        $hum = $_POST["humidityValue"] ?? '';
+        
         echo !empty($id) ? "<div> sensorID: {$id} </div>" : "<div> Gelieve sensorID in te vullen.</div>";
         echo !empty($co2) ? "<div> co2Value: {$co2} </div> 
         <div class='progress' style='height: 15px;'>
-        <div class='progress-bar bg-danger' role='progressbar' style='width:" . $co2/2000*100 . "%;' aria-valuenow='{$co2}' aria-valuemin='0' aria-valuemax='2000'>
+        <div class='progress-bar bg-danger' role='progressbar' style='width:" . $co2 / 2000 * 100 . "%;' aria-valuenow='{$co2}' aria-valuemin='0' aria-valuemax='2000'>
         </div></div>" : "<div> Gelieve co2Value in te vullen.</div>";
         echo !empty($hum) ? "<div> humidityValue: {$hum} </div>
         <div class='progress' style='height: 15px;'>

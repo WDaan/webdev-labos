@@ -71,9 +71,9 @@
         </div>
 
         <?php
-        isset($_POST["title"]) ?  $title = $_POST["title"] : $title = "";
-        isset($_POST["content"]) ?  $content = $_POST["content"] : $content = "";
-        isset($_POST["author"]) ?  $author = $_POST["author"] : $author = "";
+        $title = $_POST["title"] ?? '';
+        $content = $_POST["content"] ?? '';
+        $author = $_POST["author"] ?? '';
 
         if (!empty($title) && !empty($content) && !empty($author)) {
             mysqli_query($sql, "INSERT INTO messages (title, content, author) VALUES ('{$title}', '{$content}', '{$author}')");

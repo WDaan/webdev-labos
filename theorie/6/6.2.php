@@ -29,10 +29,11 @@
         </div>
 
         <?php
-        isset($_POST["afkorting"]) ?  $afkorting = $_POST["afkorting"] : $afkorting = "";
-      
+
+        $afkorting = $_POST["afkorting"] ?? '';
+
         $link = mysqli_connect("localhost", "root", "root", "website")
-        or die("error:" . mysqli_connect_error($link));
+            or die("error:" . mysqli_connect_error($link));
 
         if (!empty($afkorting)) {
             mysqli_query($link, "DELETE FROM afkortingen WHERE id={$afkorting}");

@@ -29,8 +29,8 @@
         </div>
 
         <?php
-        isset($_POST["search"]) ?  $search = $_POST["search"] : $search = "";
-
+        $search = $_POST["search"] ?? '';
+ 
         $link = mysqli_connect("localhost", "root", "root", "website")
             or die("error:" . mysqli_connect_error($link));
 

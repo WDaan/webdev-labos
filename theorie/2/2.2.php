@@ -18,10 +18,10 @@
 
         <?php
 
-        isset($_GET["Voornaam"]) ?  $voornaam = $_GET["Voornaam"] : $voornaam = "";
-        isset($_GET["Achternaam"]) ?  $achternaam = $_GET["Achternaam"] : $achternaam = "";
-        isset($_GET["Studentnummer"]) ?  $nr = $_GET["Studentnummer"] : $nr = "";
-        isset($_GET["E-mailadres"]) ?  $email = $_GET["E-mailadres"] : $email = "";
+        $voornaam = $_GET["Voornaam"] ?? '';
+        $achternaam = $_GET["Achternaam"] ?? '';
+        $nr = $_GET["Studentnummer"] ?? '';
+        $email = $_GET["E-mailadres"] ?? '';
 
         echo !empty($voornaam) ? "<div> Voornaam: {$voornaam} </div>" : "<div> Gelieve uw voornaam in te vullen.</div>";
         echo !empty($achternaam) ? "<div> Achternaam: {$achternaam} </div>" : "<div> Gelieve uw achternaam in te vullen.</div>";
