@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>JQuery</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./10.1.js"></script>
+  </head>
+
+  <body>
+    <div class="container text-center">
+      <h1 id="title" style="text-align:center; margin: 50px 0px 30px 0px;">
+        Testing Jquery
+      </h1>
+    </div>
+    <div class="container text-center mt-5">
+      <button class="btn btn-primary" onclick="Hide()">Hide</button>
+      <button class="btn btn-success" onclick="Toggle()">Toggle</button>
+    </div>
+    <!--slidetoggle-->
+    <div class="container text-center mt-5">
+      <div style="margin: 0 auto;">
+        <img id="logo" src="Logo.png" width="300" />
+      </div>
+      <div>
+        <h3 id="slidetoggleresponse"></h3>
+        <button class="mt-5 btn btn-primary" onclick="slideToggle()">
+          slidetoggle
+        </button>
+      </div>
+    </div>
+    <!-- Animate -->
+    <section id="animate-section">
+      <div class="container text-center mt-5">
+        <div style="position: relative;">
+          <img id="car" src="assets/car.svg" alt="car" />
+          <img id="tree" src="assets/tree.svg" alt="trees" />
+        </div>
+        <div class="mt-5" >
+          <button class="btn btn-secondary" style="margin-top: 140px;" class="btn btn-info" onclick="Animate()">Animate!</button>
+        </div>
+      </div>
+    </section>
+    <style>
+      /* Animate */
+      #car {
+        width: 100px;
+        position: absolute;
+        z-index: 1;
+      }
+
+      #tree {
+        width: 70px;
+        position: absolute;
+      }
+    </style>
+    <!-- hide callback -->
+    <section id="animate-section">
+      <div class="container text-center mt-5">
+        <button class="mt-5 btn btn-warning" onclick="hidecallback()">
+          hide callback
+        </button>
+        <h3 id="hidecallbackresponse"></h3>
+    </section>
+    <!-- css -->
+    <section id="animate-section">
+      <div class="container text-center mt-5">
+        <button class="mt-5 btn btn-warning" onclick="changeCss()">
+          css
+        </button>
+    </section>
+  </body>
+</html>
